@@ -1,0 +1,78 @@
+// -------
+// SASS
+// Compile with Prepros http://alphapixels.com/prepros/ (free version avail)
+// http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+// -------
+
+
+// ------- Dimensions -------
+$site-min-width: 970px;
+$site-min-height: 600px;
+
+// ------- Global variables -------
+@import "includes/variables";
+
+// ------- Mixins functions -------
+@import "includes/mixins";
+
+//------- import HTML5 Boiler plate top wrapper -------
+@import "includes/html5bp/topwrapper";
+
+// ------- Fonts -------
+@import "includes/fonts";
+
+// ------- Grid layout -------
+// static fixed width of 970px
+// @import "includes/grid/static";
+
+// percentage based responsive design
+// We import the css version because 
+// the sass one takes a long time to compile
+@import "includes/grid/fluid";
+
+// basic css styling for things like Body/container
+@import "includes/basics";
+
+
+/* 
+  ---------------------
+  IMPORT VIEWS and SEP .SCSS files here: 
+  ---------------------
+*/
+// @import "includes/appdownload-btns";
+
+@import "views/directory-page";
+@import "views/master";
+
+/* 
+  ---------------------
+  end of imports 
+  ---------------------
+*/
+
+@import "views/slide";
+
+
+/* 
+  ---------------------
+    Z-INDEXES: 
+  ---------------------
+*/
+@import "z-indexes";
+/* 
+  ---------------------
+  END Z-INDEXES: 
+  ---------------------
+*/
+
+
+
+/*
+  ---------------------
+  END CUSTOM CODE
+  ---------------------
+*/
+//import HTML5 bp bottom wrapper files
+@import "includes/html5bp/bottomwrapper";
+@import "includes/mediaqueries";
+

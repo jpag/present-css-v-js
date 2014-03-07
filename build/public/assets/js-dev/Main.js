@@ -72,7 +72,7 @@ require([
     
     // Determine what page or view to load here:
     App.init = function() {
-        Debug.trace( ' ----- INITIALIZE APP ----' );
+        //Debug.trace( ' ----- INITIALIZE APP ----' );
         // Determine the path and what view to load:
         var view = null,
             Address = window.location.pathname.replace(siteMap.locationPath , "" );
@@ -117,24 +117,27 @@ require([
     */
     App.loadComplete = function() {
         // Debug.trace(' APP LOAD COMPLETE');
-        $("#siteloader")
-                .delay(50)
-                .animate({
-                    "top": "25px"
-                })
-                .animate({
-                    "opacity":0,
-                    'top':'-100px'
-                }, {
-                    duration: 200,
-                    complete: App.revealAll
-                });
+        // $("#siteloader")
+        //         .delay(50)
+        //         .animate({
+        //             "top": "25px"
+        //         })
+        //         .animate({
+        //             "opacity":0,
+        //             'top':'-100px'
+        //         }, {
+        //             duration: 200,
+        //             complete: App.revealAll
+        //         });
+
+        App.revealAll();
     };
 
     // remove the loader and show the content
     App.revealAll = function() {
-        $("#site-composite").fadeIn();
-        $("#siteloader-wrapper").remove();
+        //$("#site-composite").fadeIn(500);
+        $("#site-composite").show();
+        //$("#siteloader-wrapper").remove();
     };
 
     App.init();

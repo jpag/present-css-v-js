@@ -15,7 +15,7 @@ define([], function() {
   // if you have a re-occuring subview that doesn't auto intitate in main
   // declare it here and save lines of code
   
-  
+
   var config = [
   		{
         path:'/directory',
@@ -24,15 +24,54 @@ define([], function() {
         _Template:'directory.html',
         _Model : {}
       },{
-  			path:'/slide/1',
+        path:'/slide/1',
         name: 'Welcome',
-        status: 'In Production',
+        status: '',
+        description: '',
+        _Controller: 'views/slide',
+        _Template: 'slide.html',
+        _Model: {
+          greeting : "Hello."
+        }
+      },{
+        path:'/slide/2',
+        name: 'slide 2',
+        status: '',
+        description: '',
+        _Controller: 'views/slide',
+        _Template: 'slide.html',
+        _Model: {
+          greeting : "Sup."
+        }
+      },{
+        path:'/slide/3',
+        name: 'slide 3',
+        status: '',
+        description: '',
+        _Controller: 'views/slide',
+        _Template: 'slide.html',
+        _Model: {
+          greeting : "salut."
+        }
+      },{
+        path:'/slide/4',
+        name: 'slide 4',
+        status: '',
+        description: '',
+        _Controller: 'views/slide',
+        _Template: 'slide.html',
+        _Model: {
+          greeting : "ciao."
+        }
+      },{
+  			path:'/slide/5',
+        name: 'slide 5',
+        status: '',
         description: '',
   			_Controller: 'views/slide',
         _Template: 'slide.html',
   			_Model: {
-          title   : 'A massive h1 title', 
-          subtitle  : 'Some Subtitile'
+          greeting : "cheerio."
         }
   		}
     ];

@@ -1,3 +1,4 @@
+/* 
 @font-face {
 	font-family: "FoundersGrotCond-Bold";
 	src: url("../fonts/founders/FoundersGrotCond-Bold.eot?") format("embedded-opentype"),
@@ -51,14 +52,33 @@
 	font-style: normal;
 	font-weight: 500;
 	font-stretch: normal;
+} 
+*/
+
+@font-face {
+    font-family: 'HUGE-AvantGarde-Bold';
+    src: url('../fonts/hugefont/huge_agb_v5.eot');
 }
 
-@mixin founders( $size: 18px, $color : #333333 ){
-	font-family: "FoundersGrotCond-Semibold";
-	font-size: $size;
-	color: $color;
-	text-transform: uppercase;
+@font-face {
+    font-family: 'HUGE-AvantGarde-Bold';
+    src: url('../fonts/hugefont/huge_agb_v5.woff') format('woff'),
+    url('../fonts/hugefont/huge_agb_v5.svg#HUGE-AvantGarde-Bold') format('svg');
 }
+
+
+// @mixin founders( $size: 18px, $color : #333333 ){
+// 	font-family: "FoundersGrotCond-Semibold";
+// 	font-size: $size;
+// 	color: $color;
+// 	text-transform: uppercase;
+// }
+
+@mixin sansserif {
+	//font-family: "FoundersGrotCond-Semibold", sans-serif;
+	font-family: "HUGE-AvantGarde-Bold", Arial, sans-serif;
+}
+
 
 .georgiafont{
 	font-family: Georgia, Serif;
@@ -66,7 +86,7 @@
 
 h1, h2 {
 	color: #444444;
-	font-family: "FoundersGrotCond-Semibold", sans-serif;
+	@include sansserif;
 	text-transform: none;
 	font-style: normal;
 	font-weight: 500;
@@ -85,7 +105,7 @@ h2 {
 h3 {
 	color: #cccccc;
 	font-size: 24px;
-	font-family: "FoundersGrotCond-Semibold", sans-serif;
+	@include sansserif;
 	text-transform: none;
 	font-style: normal;
 	font-weight: 500;

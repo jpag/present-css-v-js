@@ -33,13 +33,15 @@
 			border-top: 1px solid $color;
 			background: $color;
 			text-transform: uppercase;
-			@include founders( 20px, #888);
+			font-size:20px;
+			color:#888;
 			text-align: left;
 		}
 	}
 
 	.directory-title {
-		@include founders( 18px, #aaa);
+		font-size:18px;
+		color:#aaa;
 	}
 
 	.directory-status,

@@ -1,4 +1,4 @@
-#siteloader-wrapper{
+/* #siteloader-wrapper{
   position: absolute;
   top: 180px;
   width: 100%;
@@ -9,7 +9,7 @@
     width: 35px;
   }
 }
-
+ */
 #master-wrapper {
   
 	min-height: $site-min-height;
@@ -20,3 +20,10 @@
 
 }
 
+#site-composite {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}

@@ -1,17 +1,15 @@
 <div class="full-box" id="directory-page" >
 	<div class="container" id="directory-header">
 		<div class="row">
-	        	<div class="col span-3">
+	        	<div class="col span-6">
 	        		Name
 	        	</div>
+	        	
 	        	<div class="col span-3">
-	        		Path
+	        		&nbsp;
 	        	</div>
 	        	<div class="col span-3">
-	        		Description
-	        	</div>
-	        	<div class="col span-3">
-	        		Status
+	        		&nbsp;
 	        	</div>
 
 	        </div>	
@@ -20,19 +18,17 @@
     <div class="container">
     	{{#each listings}}
 	        <a href="{{sitepath}}{{path}}" class="row">
-	        	<div class="col span-3 directory-title">
+	        	<div class="col span-6 directory-title">
 	        		{{name}}
 	        	</div>
-	        	<div class="col span-3">
-	        		{{path}}
+	        	<div class="col span-3" >
+	        		&nbsp;
 	        	</div>
 	        	<div class="col span-3 directory-description">
 	        		{{description}}
 	        	</div>
 	        	
-	        	<div class="col span-3 directory-status">
-	        		{{status}}
-	        	</div>
+	        	
 	        	
 	        </a>	
 	      {{/each}}

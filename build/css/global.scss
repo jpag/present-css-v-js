@@ -10,6 +10,7 @@ $site-min-width: 970px;
 $site-min-height: 600px;
 
 // ------- Global variables -------
+@import "includes/grid/fluid-variables";
 @import "includes/variables";
 
 // ------- Mixins functions -------

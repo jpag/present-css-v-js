@@ -54,7 +54,7 @@ define([], function() {
         },
 
         init : function(_config) {
-            Debug.trace( this.name + ' INITIALIZED ----- ');
+            //Debug.trace( this.name + ' INITIALIZED ----- ');
 
             // Make sure we have all the things we might need:
             // asign defaults if they do not exist
@@ -86,7 +86,7 @@ define([], function() {
                 linkNode = document.createElement('link'),
                 head = document.getElementsByTagName('head')[0];
 
-            Debug.trace(' css path ' + cssPath );
+            //Debug.trace(' css path ' + cssPath );
 
             linkNode.setAttribute('rel', 'stylesheet');
             linkNode.setAttribute('type', 'text/css');
@@ -131,8 +131,8 @@ define([], function() {
                     view.settings._Model = Model;
                 }
 
-                Debug.trace( ' - LOADED - ' + view.name + ' MODEL : ' );
-                Debug.trace( Model );
+                // Debug.trace( ' - LOADED - ' + view.name + ' MODEL : ' );
+                // Debug.trace( Model );
 
                 var handlebar = Handlebars.compile(Template);
                 view.$el = $( handlebar(Model) );
@@ -184,13 +184,13 @@ define([], function() {
         },
 
         bindEvents : function() {
-            Debug.trace( ' BIND EVENTS: ' );
-            Debug.trace( this.eventManager );
+            //Debug.trace( ' BIND EVENTS: ' );
+            //Debug.trace( this.eventManager );
 
             // bind all the functions to 'this' the view.
             var bindedEvents = {}; 
             for (var key in this.eventManager) {
-                Debug.trace( key );
+                //Debug.trace( key );
                 var func = this.eventManager[key];
                 bindedEvents[key] = $.proxy( this.eventManager[key] , this );
             }

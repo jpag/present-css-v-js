@@ -21,6 +21,8 @@ define([
             a : 65
         },
 
+        cookielabel : 'slidedirection',
+
         eventManager : {
             'click' : function(ev){ 
                 this.clickEvent(ev);
@@ -39,11 +41,33 @@ define([
             $('body').on({
                 "keyup": $.proxy(this.keyup,this)
             });
+            
+            var self = this;
+
+            Debug.trace( document.cookie );
+            if( document.cookie ){
+                var split = document.cookie.split(";");
+                for( var c = 0; c < split.length; c++){
+                    Debug.trace( ' c ' + split[c] );
+                    if( split[c].indexOf(this.cookielabel) >= 0 ){
+
+                        var r = split[c].split("=");
+
+                        if( parseInt(r[1]) < 0 ){
+                            self.$el
+                                .removeClass(self.cl.right)
+                                .addClass(self.cl.left)        
+                        }
+
+                        break;
+                    }
+                }
+            }
 
             // this.$el.fadeIn(300);
-            var self = this;
             setTimeout(function(){
-                self.$el.removeClass(self.cl.right);
+                self.$el
+                    .removeClass(self.cl.right + ' ' + self.cl.left + ' ' + self.cl.bottom);        
             }, 10);
             
         },
@@ -71,8 +95,10 @@ define([
                 split = window.location.pathname.split('/'),
                 currentNum = parseInt(split.pop()),
                 destination = currentNum + num,
-                cl = (num > 0)? this.cl.left : this.cl.bottom;
-                
+                cl = (num > 0)? this.cl.left : this.cl.right;
+            
+            document.cookie = this.cookielabel+"="+num;
+    
             this.$el.addClass(cl);
             this.$el.on("webkitTransitionEnd transitionend oTransitionEnd", function(){
 

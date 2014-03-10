@@ -8,7 +8,11 @@
 
 	width: $slideW - $padding;
 	height: $slideH - $padding;
-	
+	//min-height: 720px;
+
+	// for mobile:
+	overflow: auto;
+
 	left: 50%;
 	top: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -39,6 +43,39 @@
 		@include alpha(0);
 	}
 
+	.fader-el {
+		@include alpha(0);
+		@include animate-default(opacity, $s);
+	}
+
+	&.state-1 {
+		.el-0 {
+			@include alpha(100);
+		}
+	}
+	&.state-2 {
+		.el-0,
+		.el-1 {
+			@include alpha(100);
+		}
+	}
+	&.state-3 {
+		.el-0,
+		.el-1,
+		.el-2 {
+			@include alpha(100);
+		}
+	}
+	&.state-4 {
+		.el-0,
+		.el-1,
+		.el-2,
+		.el-3 {
+			@include alpha(100);
+		}
+	}
+
+
 	.huge-bar {
 		width: 20px;
 		height: 100%;
@@ -51,11 +88,58 @@
 
 	h1 {
 		// line-height: 100%;
-		font-size: 18em;
-		letter-spacing: -15px;
+		font-size: 6em;
+		letter-spacing: -0.01em;
 		color: #000;
+		width: 80%;
 	}
 
+	.wrapper {
+		background: #f9f9f9;
+		border: 1px solid #e0e0e0;
+		border-radius: 5px;
+	}
+
+	.code-container {
+		margin-top: 2%;
+		text-transform: uppercase;
+		@include sansserif();
+		font-size: 18px;
+
+		code {
+			margin-top: 1%;
+			width: 98%;
+			padding: 2%;
+			text-transform: none;
+			background: #f9f9f9;
+			border: 1px solid #e0e0e0;
+			border-radius: 5px;
+			display: block;
+			font-family: consolas, courier, monospace;
+			font-size: 12px;
+			line-height: 16px;
+			//white-space: pre; 
+			text-align: left;
+			// background-color: #ccf; 
+			color: #000;
+		}
+	}
+
+	.bulletpoints {
+		padding: 10px;
+		h2 {
+			padding: 0px;
+			font-size: 24px;
+			//text-transform: uppercase;
+		}
+		ul {
+			font-size: 16px;
+			color: #999;
+			li {
+				padding: 5px;
+			}
+		}
+	}
 
 
 	@media screen and (max-width: $smallBreak) {
@@ -63,12 +147,13 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		width: 100%;
-		height: 100%;
+		width: 100% - $padding;
+		height: 100% - $padding;
 		margin: 0px;
 		border: none;
 		box-shadow : none;
 		-webkit-box-shadow: none; 
+		overflow: auto;
 	}	
 }
 

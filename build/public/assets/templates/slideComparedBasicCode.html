@@ -1,0 +1,17 @@
+<div class="slide right state-1" data-state="1" data-states="{{numstates}}" >
+	<!-- <div class="huge-bar"></div> -->
+
+	<h1>{{header}}</h1>
+
+	<div class="code-container">
+		{{#each code}}
+		<div class="code-wrapper {{title}} fader-el el-{{@index}}">
+			<h3>
+				{{title}}<span class="sub">{{blurb}}</span>
+			</h3>
+			<code>{{{code}}}</code>
+		</div>
+		{{/each}}
+	</div>
+	
+</div>

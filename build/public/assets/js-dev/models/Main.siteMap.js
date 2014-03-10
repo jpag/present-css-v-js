@@ -25,55 +25,56 @@ define([], function() {
         _Model : {}
       },{
         path:'/slide/1',
-        name: 'Welcome',
+        name: 'Introduction',
         status: '',
         description: '',
         _Controller: 'views/slide',
         _Template: 'slide.html',
         _Model: {
-          greeting : "Hello."
+          numstates : 1,
+          header : "Animations <br/>in CSS or JS"
         }
       },{
         path:'/slide/2',
-        name: 'slide 2',
+        name: 'What is the difference',
         status: '',
         description: '',
         _Controller: 'views/slide',
         _Template: 'slide.html',
-        _Model: {
-          greeting : "Sup."
-        }
+        _Model: "models/Model.whatisthedifference"
       },{
         path:'/slide/3',
-        name: 'slide 3',
+        name: 'Basic animation comparison',
         status: '',
         description: '',
-        _Controller: 'views/slide',
-        _Template: 'slide.html',
+        _Controller: 'views/slideComparedBasic',
+        _Template: 'slideComparedBasic.html',
         _Model: {
-          greeting : "salut."
-        }
+          numstates : 7,
+          header :  "Animating only top compared.",
+        },
+        _Style : "slideComparedBasic.css"
       },{
+        path:'/slide/4',
+        name: 'Code comparison',
+        status: '',
+        description: '',
+        _Controller: 'views/slideComparedBasic',
+        _Template: 'slideComparedBasicCode.html',
+        _Model: "models/Model.comparedBasic",
+        _Style : "slideComparedBasic.css"
+      }
+
+      /*,{
         path:'/slide/4',
         name: 'slide 4',
         status: '',
         description: '',
-        _Controller: 'views/slide',
-        _Template: 'slide.html',
-        _Model: {
-          greeting : "ciao."
-        }
-      },{
-  			path:'/slide/5',
-        name: 'slide 5',
-        status: '',
-        description: '',
-  			_Controller: 'views/slide',
-        _Template: 'slide.html',
-  			_Model: {
-          greeting : "cheerio."
-        }
-  		}
+        _Controller: 'views/slideComparedComplex',
+        _Template: 'slideComparedComplex.html',
+        _Style : 'slideComparedComplex.css',
+        _Model: 'models/Model.comparedComplex'
+      }*/
     ];
 
   return {directory:config, defaultPage:defaultPage, locationPath:pathname };

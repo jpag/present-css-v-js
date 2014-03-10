@@ -10,48 +10,7 @@ define([], function() {
          * keeps in scope of this view only 
          * so nothing else will respond to 'event'
          */
-        eventManager: {
-            
-            // click : function(event){ do something },
-
-            // ---- Touch
-            // touchStart
-            // touchMove
-            // touchEnd
-            // touchCancel
-            
-            // ---- KEY
-            // keyDown
-            // keyUp
-            // keyPress
-            
-            // ---- MOUSE
-            // mouseDown
-            // mouseUp
-            // contextMenu
-            // click
-            // doubleClick
-            // mouseMove
-            // focusIn
-            // focusOut
-            // mouseEnter
-            // mouseLeave
-            
-            // ---- FORM
-            // submit
-            // change
-            // focusIn
-            // focusOut
-            // input
-
-            // ---- HTML 5 drag and drop
-            // dragStart
-            // drag
-            // dragEnter
-            // dragLeave
-            // drop
-            // dragEnd
-        },
+        eventManager: { },
 
         init : function(_config) {
             //Debug.trace( this.name + ' INITIALIZED ----- ');

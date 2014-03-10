@@ -21,6 +21,15 @@
 }
 
 
+@mixin animate-transform($time){
+  $ease : cubic-bezier(0.385, 0.205, 0.235, 0.835);;
+  -webkit-transition: -webkit-transform $time $ease;
+   -moz-transition: -mox-transform $time $ease;
+    -ms-transition: -ms-transform $time $ease;
+     -o-transition: -o-transform $time $ease;
+        transition: -transform $time $ease;
+}
+
 @mixin animate-height-width($time:500ms ){
   -webkit-transition: height $time cubic-bezier(0.385, 0.205, 0.235, 0.835);
        -moz-transition: height $time cubic-bezier(0.385, 0.205, 0.235, 0.835);
@@ -50,4 +59,13 @@
   
   //whole number 1-100
   filter :alpha(opacity=$opacity);
+}
+
+
+@mixin prefix ( $property, $value... ) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+       -o-#{$property}: $value;
+          #{$property}: $value;
 }

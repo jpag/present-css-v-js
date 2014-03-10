@@ -1,0 +1,158 @@
+@import "../includes/variables";
+@import "../includes/fonts";
+// ------- Mixins functions -------
+@import "../includes/mixins";
+
+
+.slide {
+	
+	h1 {
+		font-size: 5em;
+	}
+
+	$time : 500ms;
+	$barheight : 50px;
+	$heightAvail : 400px;
+	
+	.wrapper {
+		$padding: 1%;
+		$margin: 1%;
+		$wrapperWidth : 100%;
+
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		
+		margin: auto;
+		height: $heightAvail + 20px;
+		width: $wrapperWidth - ((2*$padding) + (2* $margin) );
+		padding: $padding;
+		margin: $margin;
+
+		.bar-wrapper {
+			$numBars : 4;
+			width: (100% / $numBars) - (2*$margin);
+			position: relative;
+			float: left;
+			margin: $margin;
+			height: $heightAvail;
+		}
+
+		.bar {
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			background: #edb33f;
+			height: $barheight;
+			line-height: $barheight;
+			padding: 5px 0px;
+			text-align: center;
+			// font-size: 3em;
+			text-transform: uppercase;
+			@include sansserif();
+			color: #fff;
+
+		}
+
+		.bar-wrapper.css-height {
+			.bar {
+				@include animate-default(top, $time);
+			}
+		}
+
+		.bar-wrapper.transform {
+			-webkit-transform-style: preserve-3d;
+
+			.bar {
+				@include prefix ( transform, translate3d(0px, 0px, 0px) );
+		 		@include animate-transform($time);
+		 	}
+		}
+	}
+
+	&.state-2,
+	&.state-7 {
+		.wrapper {
+			.css-height {
+				.bar {
+					top: $heightAvail - $barheight;
+				}
+			}
+		}
+	}
+	&.state-3,
+	&.state-7 {
+		.wrapper {
+			.transform {
+				//height: $barheight;
+				.bar {
+					@include prefix ( transform, translate3d(0px,$heightAvail - $barheight,0px) );
+				}
+			}
+		}
+	}
+
+	.code-container {
+		.code-wrapper {
+			padding: 0px 0px 10px 0px;
+			h3 {
+				color: #888;
+				span {
+					padding: 0px 10px;
+					@include serif;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+/* 	.code-container {
+		//display: none;
+		.code-wrapper {
+			display: none;
+		}
+	}
+
+	&.state-8,
+	&.state-9,
+	&.state-10,
+	&.state-11 {
+		
+		.wrapper.animations{
+			display: none;
+		}
+
+		.code-container {
+			display: block;
+		}
+	}
+
+	&.state-8 {
+		.code-container .css {
+			display: block;
+		}
+	}
+	&.state-9 {
+		.code-container .transform {
+			display: block;
+		}
+	}
+	&.state-9 {
+		.code-container .transform {
+			display: block;
+		}
+	}
+	&.state-10 {
+		.code-container .jquery {
+			display: block;
+		}
+	}
+	&.state-11 {
+		.code-container .tweenlite {
+			display: block;
+		}
+	}
+	 */
+
+
+}

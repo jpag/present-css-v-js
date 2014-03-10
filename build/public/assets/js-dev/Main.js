@@ -14,18 +14,15 @@ requirejs.config({
 
     paths: {
         jQuery          : '_wrappers/jquery.wrapper',
-        jScroll         : '_lib/jquery.mousewheel.min',
         jEase           : '_lib/jquery.easing.1.3.min',
+        TweenLite       : '_lib/tweenlite/TweenMax.min',
         Handlebars      : '_lib/handlebars-1.0.0',
         text            : '_lib/text',
-        BaseView        : 'views/_BaseView'
+        BaseView        : 'views/_BaseView',
+        Slide           : 'views/slide'
     },
     priority: ['jQuery'],
     shim: {
-        "jScroll":{
-            deps    :["jQuery"],
-            exports :"jScroll"
-        },
         "jEase":{
             deps    :["jQuery"],
             exports :"jEase"
@@ -49,6 +46,7 @@ requirejs.config({
 require([
     'jQuery',
     'Handlebars',
+    'TweenLite',
     'models/Main.siteMap',
     '_modules/debugger',
     '_modules/Global.setup',
@@ -59,12 +57,12 @@ require([
      * i.e. a nav. or footer.
      */
 
-    'jScroll',
     'jEase',
     'text' 
 ], function(
     $,
     Handlebars,
+    TweenLite,
     siteMap
 ) {
     
@@ -81,6 +79,7 @@ require([
             if( Address == siteMap.directory[s].path ) {
                 // Debug.trace("  - page match " + siteMap.directory[s].view );
                 view = siteMap.directory[s];
+                view.numofslides = siteMap.directory.length - 1; // remove directory from length
             }
         }
 

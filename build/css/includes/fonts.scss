@@ -66,6 +66,27 @@
     url('../fonts/hugefont/huge_agb_v5.svg#HUGE-AvantGarde-Bold') format('svg');
 }
 
+@font-face {
+    font-family: 'GalaxieCopernicus-Book';
+    src: url('../fonts/GalaxieCopernicus/GalaxieCopernicus-Book.eot');
+}
+
+@font-face {
+    font-family: 'GalaxieCopernicus-Book';
+    src: url('../fonts/GalaxieCopernicus/GalaxieCopernicus-Book.woff') format('woff'),
+    url('../fonts/GalaxieCopernicus/GalaxieCopernicus-Book.svg#GalaxieCopernicus-Book') format('svg');
+}
+
+@font-face {
+    font-family: 'GalaxieCopernicus-BookItalic';
+    src: url('../fonts/GalaxieCopernicus/GalaxieCopernicus-BookItalic.eot');
+}
+
+@font-face {
+    font-family: 'GalaxieCopernicus-BookItalic';
+    src: url('../fonts/GalaxieCopernicus/GalaxieCopernicus-BookItalic.woff') format('woff'),
+    url('../fonts/GalaxieCopernicus/GalaxieCopernicus-BookItalic.svg#GalaxieCopernicus-BookItalic') format('svg');
+}
 
 // @mixin founders( $size: 18px, $color : #333333 ){
 // 	font-family: "FoundersGrotCond-Semibold";
@@ -77,6 +98,14 @@
 @mixin sansserif {
 	//font-family: "FoundersGrotCond-Semibold", sans-serif;
 	font-family: "HUGE-AvantGarde-Bold", Arial, sans-serif;
+}
+
+@mixin serif( $size: 18px, $color : #333333 ){
+	font-family: 'GalaxieCopernicus-BookItalic', Georgia, Serif;
+	//font-style:italic;
+	font-size: $size;
+	color: $color;
+	font-weight: 100;
 }
 
 

@@ -1,4 +1,5 @@
-## references for presentation notes:
+## references for presentation :
+
 
 
 
@@ -10,25 +11,24 @@
 	Top and Bottom wrappers are using HTML5 boilerplate
 
 # Javascript
+	View builder extend. 
 
 	JQuery v1.10 (not 2.0) supports old IE.
-	Backbone v 1.1 framework make sure to build the site before deploying.. with the build script.
-	Underscore v 1.5.2
 	Handlebars v 1.1.2
 
 # HTML templating:
 
-	- could use underscore interpolate to switch to {{}} handlebars/moustache style templating
+	- could use underscore interpolate to switch to {{}} handlebars/mustache style templating
     
     .templateSettings = {
      interpolate: /\{\{(.+?)\}\}/g
     };
 
-	- or just use handlebars?
+	- or just use handlebars
 
 
 # Build Process
-	We optimize our files using Require.
+	Optimize files using Require.
 
 	First, install the requirejs npm package (if you haven't already):
     npm install -g requirejs
@@ -40,4 +40,4 @@
 
 
 ## TODO:
-	re-enable deeplinking with backbone history
+	

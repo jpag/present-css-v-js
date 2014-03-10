@@ -21,19 +21,24 @@ define([
             a : 65
         },
 
+        totalSlides : 0,
+
         cookielabel : 'slidedirection',
 
         eventManager : {
             'click' : function(ev){ 
                 this.clickEvent(ev);
             },
-            // 'keydown' : function(ev){
-            //     this.keydown(ev);
-            // }
+            'touchend' : function(ev){
+                this.touchEvent(ev);
+            }
         },
 
         init : function(_config){
             this._super(_config);
+            this.totalSlides = _config.numofslides;
+            // Debug.trace( ' total num slides ' + this.totalSlides );
+
         },
 
         didInsertElement : function(){
@@ -44,11 +49,10 @@ define([
             
             var self = this;
 
-            Debug.trace( document.cookie );
             if( document.cookie ){
                 var split = document.cookie.split(";");
                 for( var c = 0; c < split.length; c++){
-                    Debug.trace( ' c ' + split[c] );
+                    Debug.trace( ' cookie : ' +c + ' - ' + split[c] );
                     if( split[c].indexOf(this.cookielabel) >= 0 ){
 
                         var r = split[c].split("=");
@@ -58,13 +62,11 @@ define([
                                 .removeClass(self.cl.right)
                                 .addClass(self.cl.left)        
                         }
-
                         break;
                     }
                 }
             }
 
-            // this.$el.fadeIn(300);
             setTimeout(function(){
                 self.$el
                     .removeClass(self.cl.right + ' ' + self.cl.left + ' ' + self.cl.bottom);        
@@ -74,6 +76,16 @@ define([
 
         clickEvent: function(ev) {
             Debug.trace(' ------ click ----- ');
+
+            // go to next?
+            // this.gotoslide(1);
+        },
+
+        touchEvent: function(ev) {
+            Debug.trace(' ------ touch ----- ');
+
+            // go to next?
+            this.gotoslide(1);
         },
 
         keyup : function(ev){
@@ -90,27 +102,52 @@ define([
         },
 
         gotoslide : function(num){
+            var state = parseInt(this.$el.data('state')),
+                states = parseInt(this.$el.data('states'));
 
-            var currentLoc = window.location.pathname,
-                split = window.location.pathname.split('/'),
-                currentNum = parseInt(split.pop()),
-                destination = currentNum + num,
-                cl = (num > 0)? this.cl.left : this.cl.right;
+            if(  states == 1 ||  
+                (state == states) && num == 1  ||
+                (state == 1) && num == -1 ){
+                
+                var currentLoc = window.location.pathname,
+                    split = window.location.pathname.split('/'),
+                    currentNum = parseInt(split.pop()),
+                    destination = currentNum + num,
+                    cl = (num > 0)? this.cl.left : this.cl.right,
+                    totalNum = this.totalSlides;    
+
+                document.cookie = this.cookielabel+"="+num;
             
-            document.cookie = this.cookielabel+"="+num;
-    
-            this.$el.addClass(cl);
-            this.$el.on("webkitTransitionEnd transitionend oTransitionEnd", function(){
+                this.$el.addClass(cl);
+                this.$el.on("webkitTransitionEnd transitionend oTransitionEnd", function(){
 
-                //why would this NOT be a slide ?
-                if( destination < 1 ){
-                    // go to directory.
-                    window.location = '/';
-                }else{
-                    // we do not know the number of slides.
-                    window.location = '/'+split[1]+'/'+destination;
-                }
-            }); 
+                    //why would this NOT be a slide ?
+                    if( destination < 1 || destination > totalNum ){
+                        // go to directory.
+                        window.location = '/';
+                    }else{
+                        // we do not know the number of slides.
+                        window.location = '/'+split[1]+'/'+destination;
+                    }
+                }); 
+            }else{
+                Debug.trace(' updating state ' + state );
+                
+                var next = state+num;
+
+                this.$el
+                    .data('state', next)
+                    .removeClass('state-'+state )
+                    .addClass('state-'+ next);
+
+                this.stateChanged(next);
+                // $(document).trigger('statechanged',[next]);
+                
+            }
+        },
+
+        stateChanged : function(num) {
+            Debug.trace(' state changed base');
         }
 
     });

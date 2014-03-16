@@ -19,7 +19,8 @@ requirejs.config({
         Handlebars      : '_lib/handlebars-1.0.0',
         text            : '_lib/text',
         BaseView        : 'views/_BaseView',
-        Slide           : 'views/slide'
+        Slide           : 'views/slide',
+        Stats           : '_lib/stats.min'
     },
     priority: ['jQuery'],
     shim: {
@@ -115,29 +116,18 @@ require([
      * animate out the loader and fade out
     */
     App.loadComplete = function() {
-        // Debug.trace(' APP LOAD COMPLETE');
-        // $("#siteloader")
-        //         .delay(50)
-        //         .animate({
-        //             "top": "25px"
-        //         })
-        //         .animate({
-        //             "opacity":0,
-        //             'top':'-100px'
-        //         }, {
-        //             duration: 200,
-        //             complete: App.revealAll
-        //         });
-
-        App.revealAll();
-    };
-
-    // remove the loader and show the content
-    App.revealAll = function() {
-        //$("#site-composite").fadeIn(500);
         $("#site-composite").show();
-        //$("#siteloader-wrapper").remove();
     };
+
+
+    // should be put in a wrapper.
+    // add Handlebar helper for loop with number:
+    Handlebars.registerHelper('times', function(n, block) {
+        var accum = '';
+        for(var i = 0; i < n; ++i)
+            accum += block.fn(i);
+        return accum;
+    });
 
     App.init();
 

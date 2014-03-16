@@ -1,35 +1,59 @@
-@import "../includes/variables";
-@import "../includes/fonts";
-// ------- Mixins functions -------
-@import "../includes/mixins";
-
-
-.slide {
+.slide#slide-compared-complex {
 	
-	h1 {
-		font-size: 5em;
-	}
-
+	$numberOfBlocks : 400;
+			
 	$time : 500ms;
 	$barheight : 50px;
-	$heightAvail : 400px;
+	$heightAvail : 450px;
 	
 	.wrapper {
 		$padding: 1%;
 		$margin: 1%;
 		$wrapperWidth : 100%;
 
-		position: absolute;
-		bottom: 0px;
-		left: 0px;
-		
-		margin: auto;
 		height: $heightAvail + 20px;
-		width: $wrapperWidth - ((2*$padding) + (2* $margin) );
+		width: 700px; //$wrapperWidth - ((2*$padding) + (2* $margin) );
 		padding: $padding;
-		margin: $margin;
+		margin: auto;
+		margin-top: 10%;
+		position: relative;
 
-		.bar-wrapper {
+		.block {
+			$blockWH : 5px;
+			width: 27px; //$blockWH;
+			height: 23px; //$blockWH;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			position: relative;
+			float: left;
+			margin: $blockWH / 2;
+			background: $demoColor;
+
+		}
+	}
+
+	&.css-animate {
+		@for $i from 1 through $numberOfBlocks {
+			.wrapper .block:nth-child(#{$i}){
+				@include animateDelay(cssComplexAnimate, $i * 25ms);
+			}
+		}
+	}
+
+	&.css-trans {
+		@for $i from 1 through $numberOfBlocks {
+			.wrapper .block:nth-child(#{$i}){
+				@include animateDelay(cssComplexAnimateTransform, $i * 25ms);
+			}
+		}	
+	}
+
+
+}
+
+
+
+		/* .bar-wrapper {
 			$numBars : 4;
 			width: (100% / $numBars) - (2*$margin);
 			position: relative;
@@ -52,9 +76,9 @@
 			@include sansserif();
 			color: #fff;
 
-		}
+		} */
 
-		.bar-wrapper.css-height {
+		/* .bar-wrapper.css-height {
 			.bar {
 				@include animate-default(top, $time);
 			}
@@ -67,31 +91,6 @@
 				@include prefix ( transform, translate3d(0px, 0px, 0px) );
 		 		@include animate-transform($time);
 		 	}
-		}
+		} */
 
-	}
-
-
-	&.state-2,
-	&.state-7 {
-		.wrapper {
-			.css-height {
-				.bar {
-					top: $heightAvail - $barheight;
-				}
-			}
-		}
-	}
-	&.state-3,
-	&.state-7 {
-		.wrapper {
-			.transform {
-				//height: $barheight;
-				.bar {
-					@include prefix ( transform, translate3d(0px,$heightAvail - $barheight,0px) );
-				}
-			}
-		}
-	}
-
-}
+	

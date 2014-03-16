@@ -67,6 +67,11 @@ define([
                 }
             }
 
+            if( typeof this.settings._Model.numstates == 'undefined' || this.settings._Model.numstates < 2 ){
+                // Debug.trace(' - hiding progress bar' );
+                $("#progress-bar").hide();
+            }
+
             setTimeout(function(){
                 self.$el
                     .removeClass(self.cl.right + ' ' + self.cl.left + ' ' + self.cl.bottom);        
@@ -78,7 +83,7 @@ define([
             Debug.trace(' ------ click ----- ');
 
             // go to next?
-            // this.gotoslide(1);
+            this.gotoslide(1);
         },
 
         touchEvent: function(ev) {
@@ -140,9 +145,12 @@ define([
                     .removeClass('state-'+state )
                     .addClass('state-'+ next);
 
+                TweenLite.to("#progress-bar .progress-state", .2 , {
+                    width : Math.ceil(next/states * 100) + "%"
+                });
+
                 this.stateChanged(next);
                 // $(document).trigger('statechanged',[next]);
-                
             }
         },
 

@@ -31,12 +31,15 @@ define([], function() {
         _Controller: 'views/slide',
         _Template: 'slide.html',
         _Model: {
+          id : "slide-start",
           numstates : 1,
-          header : "Animations <br/>in CSS or JS"
+          header : "Comparing animation techniques in HTML",
+          h1 : true,
+          blurb : "A look at CSS and JS animation performance in rapid prototyping or development."
         }
       },{
         path:'/slide/2',
-        name: 'What is the difference',
+        name: 'Differences',
         status: '',
         description: '',
         _Controller: 'views/slide',
@@ -50,8 +53,10 @@ define([], function() {
         _Controller: 'views/slideComparedBasic',
         _Template: 'slideComparedBasic.html',
         _Model: {
+          id : "slide-compare-basic",
           numstates : 7,
-          header :  "Animating only top compared.",
+          header :  "Simple Comparison"
+          //blurb : ""
         },
         _Style : "slideComparedBasic.css"
       },{
@@ -63,18 +68,71 @@ define([], function() {
         _Template: 'slideComparedBasicCode.html',
         _Model: "models/Model.comparedBasic",
         _Style : "slideComparedBasic.css"
-      }
-
-      /*,{
-        path:'/slide/4',
-        name: 'slide 4',
+      },{
+        path:'/slide/5',
+        name: 'Complex Animation CSS',
         status: '',
-        description: '',
+        description: 'Multiple objects animating at once.',
         _Controller: 'views/slideComparedComplex',
         _Template: 'slideComparedComplex.html',
         _Style : 'slideComparedComplex.css',
-        _Model: 'models/Model.comparedComplex'
-      }*/
+        _Model: {
+          id : "slide-compared-complex",
+          numstates : 1,
+          header :  "Complex Animation<br/> CSS",
+          type : "css"
+        }
+      },{
+        path:'/slide/6',
+        name: 'Complex Animation CSS transform',
+        status: '',
+        description: 'Multiple objects animating at once.',
+        _Controller: 'views/slideComparedComplex',
+        _Template: 'slideComparedComplex.html',
+        _Style : 'slideComparedComplex.css',
+        _Model: {
+          id : "slide-compared-complex",
+          numstates : 1,
+          header :  "Complex Animation<br/> CSS transform",
+          type : "css-trans"
+        }
+      },{
+        path:'/slide/7',
+        name: 'Complex Animation jQuery',
+        status: '',
+        description: 'Multiple objects animating at once.',
+        _Controller: 'views/slideComparedComplex',
+        _Template: 'slideComparedComplex.html',
+        _Style : 'slideComparedComplex.css',
+        _Model: {
+          id : "slide-compared-complex",
+          numstates : 1,
+          header :  "Complex Animation<br/> jQuery",
+          type : "jquery"
+        }
+      },{
+        path:'/slide/8',
+        name: 'Complex Animation TweenLite',
+        status: '',
+        description: 'Multiple objects animating at once.',
+        _Controller: 'views/slideComparedComplex',
+        _Template: 'slideComparedComplex.html',
+        _Style : 'slideComparedComplex.css',
+        _Model: {
+          id : "slide-compared-complex",
+          numstates : 1,
+          header :  "Complex Animation<br/> TweenLite",
+          type : "tweenlite"
+        }
+      },{
+        path:'/slide/9',
+        name: 'Conclusions',
+        status: '',
+        description: 'Wrap it up.',
+        _Controller: 'views/slide',
+        _Template: 'slide.html',
+        _Model: 'models/Model.conclusion'
+      }
     ];
 
   return {directory:config, defaultPage:defaultPage, locationPath:pathname };

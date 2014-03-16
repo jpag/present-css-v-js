@@ -1,0 +1,16 @@
+#progress-bar {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: $progressBarHeight;
+	background-color: $themeColor2;
+
+	.progress-state {
+		background-color: $themeColor1;
+		width: 0%;
+		height: 100%;
+		position: absolute;
+		left: 0px;
+	}
+}

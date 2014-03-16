@@ -167,33 +167,3 @@ $gridWidthMedium: ($colWidthMedium * $numberOfCols) + ($gutterWidthMedium * $num
 	}
 }
 //----------------------------------------------------------//
-
-// GRID OVERLAY
-//----------------------------------------------------------//
-#grid-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	z-index: 9999;
-	display: none; // off by default;
-	-webkit-transition: 400ms all;
-	pointer-events: none;
-
-	.container {
-		height: 100%;
-		background-color: RGBA(10,10,10,.05);
-
-		.row {
-			height: 100%;
-
-			.col {
-				height: 100%;
-				background-color: rgba(202, 31, 123, .2);
-			}
-		}
-	}
-}
-#grid-overlay.active {
-	display: block;
-}

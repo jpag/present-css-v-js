@@ -1,17 +1,33 @@
-<div class="slide right state-1" data-state="1" data-states="{{numstates}}" >
+<div id="{{id}}" class="slide right state-1" data-state="1" data-states="{{numstates}}" >
 	<!-- <div class="huge-bar"></div> -->
+	
+	{{#if h1}}
+		<h1>{{{header}}}</h1>
+	{{else}}
+		<h2>{{{header}}}</h2>
+	{{/if}}
+	
+		
+	{{#if blurb}}
+		<p>{{blurb}}</p>
+	{{/if}}
 
-	<h1>{{{header}}}</h1>
 	{{#if bulletpts}}
 		{{#each bulletpts}}
-		<div class="bulletpoints fader-el el-{{@index}}">
-			<h2>{{title}}</h2>
-			<ul class="{{title}}">
-				{{#each list}}
-					<li>{{this}}</li>
-				{{/each}}
-			</ul>
-		</div>
+			{{#if title}}
+				<div class="bulletpoints fader-el el-{{@index}}">
+					<h2>{{title}}</h2>
+					<ul class="{{title}}">
+						{{#each list}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{else}}
+				<div class="bulletpoints fader-el el-{{@index}}">
+					{{this}}
+				</div>
+			{{/if}}
 		{{/each}}
 	{{/if}}
 </div>

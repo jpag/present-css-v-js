@@ -1,25 +1,27 @@
 define([], function() {
   
   var config = {
-  	header : "Differences.",
+    id : "slide-differences",
+  	header : "Not all animations are <br/>created equal.",
     numstates : 3,
     bulletpts : [
       {
         title: "CSS",
         list : [
-          "Typically percieved as 'faster' (specific properties are hardware accelerated) Transforms, and Opacity get the benefit.",
+          "'Faster' (specific properties are hardware accelerated) Transforms, and Opacity get the benefit.",
+          "Requires specific definitions for each browser (Prefixes)",
           "IE 9 doesn't know what these are."
         ],
       },{
         title: "JS",
         list : [
-          "Requires a library or user programmed code to repaint/update each frame.",
-          "Complex interactions and animations can be chained together"
+          "Requires a layer of programming to update each step.",
+          "Easier to manage complex animations and interaction points."
         ]
       },{
         title: "Both",
         list : [
-          "Alter values of an element's CSS properties (top,bottom,margin... etc.)"
+          "Alter values of an html element's CSS properties (top,bottom,margin... etc.)"
         ],
       }
     ]

@@ -69,3 +69,79 @@
        -o-#{$property}: $value;
           #{$property}: $value;
 }
+
+
+
+@mixin animateDelay($type, $delay){
+  $animation: $type 500ms $delay infinite;
+
+  animation:         $animation; /* IE 10+ */
+  -webkit-animation: $animation; /* Safari 4+ */
+  -moz-animation:    $animation; /* Fx 5+ */
+  -o-animation:      $animation; /* Opera 12+ */
+}
+
+
+
+@mixin cssComplexAni {
+  0%   { 
+        //opacity: 1; 
+        background-color: $demoColor;
+        top: 0px; 
+      }
+  50%  { 
+        //opacity: 0.5; 
+        background-color: $demoFadeColor;
+        top: 25px; 
+      }
+  100% { 
+      //opacity: 1; 
+      background-color: $demoColor;
+      top: 0px;
+    }
+}
+
+@-webkit-keyframes cssComplexAnimate {
+  @include cssComplexAni;
+}
+@-moz-keyframes cssComplexAnimate {
+  @include cssComplexAni;
+}
+@-o-keyframes cssComplexAnimate {
+  @include cssComplexAni;
+}
+@keyframes cssComplexAnimate {
+  @include cssComplexAni;
+}
+
+
+@mixin cssComplexAniTrans {
+  0%   { 
+        opacity: 1; 
+        // top: 0px; 
+        @include prefix ( transform, translate3d(0px, 0px, 0px) );
+      }
+  50%  { 
+        opacity: 0.5; 
+        // top: 25px; 
+        @include prefix ( transform, translate3d(0px, 25px, 0px) );
+      }
+  100% { 
+      opacity: 1; 
+      // top: 0px;
+      @include prefix ( transform, translate3d(0px, 0px, 0px) );
+  }
+}
+
+@-webkit-keyframes cssComplexAnimateTransform {
+  @include cssComplexAniTrans;
+}
+@-moz-keyframes cssComplexAnimateTransform {
+  @include cssComplexAniTrans;
+}
+@-o-keyframes cssComplexAnimateTransform {
+  @include cssComplexAniTrans;
+}
+@keyframes cssComplexAnimateTransform {
+  @include cssComplexAniTrans;
+}

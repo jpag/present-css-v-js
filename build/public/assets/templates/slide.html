@@ -19,13 +19,13 @@
 					<h2>{{title}}</h2>
 					<ul class="{{title}}">
 						{{#each list}}
-							<li>{{this}}</li>
+							<li>{{{this}}}</li>
 						{{/each}}
 					</ul>
 				</div>
 			{{else}}
 				<div class="bulletpoints fader-el el-{{@index}}">
-					{{this}}
+					{{{this}}}
 				</div>
 			{{/if}}
 		{{/each}}

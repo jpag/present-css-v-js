@@ -8,23 +8,30 @@
     normalizeDirDefines : 'skip',
 
     paths: {
-        order       :'lib/order',
-        jQuery      :'wrapper/jquery.wrapper',
-        Underscore  : 'wrapper/underscore.wrapper',
-        backbone    :'wrapper/backbone.wrapper',
-        Handlebars  :
-        text        :'lib/text',
-        jScroll     :'lib/jquery.mousewheel.min',
-        jEase       :'lib/jquery.easing.1.3.min',
-
+        jQuery          : '_wrappers/jquery.wrapper',
+        jEase           : '_lib/jquery.easing.1.3.min',
+        TweenLite       : '_lib/tweenlite/TweenMax.min',
+        Handlebars      : '_lib/handlebars-1.0.0',
+        text            : '_lib/text',
+        BaseView        : 'views/_BaseView',
+        Slide           : 'views/slide',
+        Stats           : '_lib/stats.min'
     },
-
+    priority: ['jQuery'],
     shim: {
-        "Backbone": {
-            deps    : ["jQuery", "Underscore"],
-            exports : 'Backbone'
+        "jEase":{
+            deps    :["jQuery"],
+            exports :"jEase"
+        },
+        "Handlebars":{
+            deps    :["jQuery"],
+            exports : "Handlebars"
+        },
+        "BaseView" : {
+            deps    : ["jQuery", "Handlebars"],
+            exports : "BaseView"
         }
-    },
+    }
 
     modules: [
         {

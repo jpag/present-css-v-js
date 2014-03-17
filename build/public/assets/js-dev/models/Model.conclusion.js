@@ -8,7 +8,7 @@ define([], function() {
       "Hardware performance isn't necessairly a better thing (use in moderation)",
       "CSS animations can get complicated and hard to manage (mulitple prefixes, making timeline animations, syntax requires a lot of additional lines)",
       "jQuery, just stop using it.",
-      "Source: github.com/jpag/present-css-v-js"
+      "Source: <a href='github.com/jpag/present-css-v-js'>github.com/jpag/present-css-v-js</a>"
     ]
 
   }

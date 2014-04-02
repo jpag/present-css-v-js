@@ -17,7 +17,9 @@
         Slide           : 'views/slide',
         Stats           : '_lib/stats.min'
     },
-    priority: ['jQuery'],
+    
+    //priority: ['jQuery'],
+
     shim: {
         "jEase":{
             deps    :["jQuery"],
@@ -31,7 +33,7 @@
             deps    : ["jQuery", "Handlebars"],
             exports : "BaseView"
         }
-    }
+    },
 
     modules: [
         {

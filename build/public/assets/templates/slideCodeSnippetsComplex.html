@@ -1,0 +1,343 @@
+<div id="{{id}}" class="slide right state-1" data-state="1" data-states="{{numstates}}" >
+	<div class="slide-content">
+	<h2>{{header}}</h2>
+	<div class="code-container">
+	
+	<div class="code-wrapper css fader-el el-0">
+	<h3>
+		SASS<span class="sub">(css) before compiled</span>
+	</h3>
+	<code><pre>
+  @mixin cssComplexAni {
+    0%   { 
+        background-color: $demoColor;
+        top: 0px; 
+      }
+    50%  { 
+        background-color: $demoFadeColor;
+        top: 25px; 
+      }
+    100% { 
+      background-color: $demoColor;
+      top: 0px;
+    }
+  }
+  
+  @-webkit-keyframes cssComplexAnimate {
+    @include cssComplexAni;
+  }
+  @-moz-keyframes cssComplexAnimate {
+    @include cssComplexAni;
+  }
+  @-o-keyframes cssComplexAnimate {
+    @include cssComplexAni;
+  }
+  @keyframes cssComplexAnimate {
+    @include cssComplexAni;
+  }
+
+  $numberOfBlocks : 400;
+  .css-animate {
+    @for $i from 1 through $numberOfBlocks {
+      .wrapper .block:nth-child(#{$i}){
+        @include animateDelay(cssComplexAnimate, $i * 25ms);
+      }
+    }	
+  }
+	</pre></code>
+	</div>
+
+	<div class="code-wrapper css fader-el el-1">
+	<h3>
+		css<span class="sub">compiled using SASS and prepos</span>
+	</h3>
+	<code><pre>
+    /* keyframe animations */
+    @-webkit-keyframes cssComplexAnimate {
+      0% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+
+      50% {
+        background-color: #edcc89;
+        top: 25px;
+      }
+
+      100% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+    }
+
+    @-moz-keyframes cssComplexAnimate {
+      0% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+
+      50% {
+        background-color: #edcc89;
+        top: 25px;
+      }
+
+      100% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+    }
+
+    @-o-keyframes cssComplexAnimate {
+      0% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+
+      50% {
+        background-color: #edcc89;
+        top: 25px;
+      }
+
+      100% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+    }
+
+    @keyframes cssComplexAnimate {
+      0% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+
+      50% {
+        background-color: #edcc89;
+        top: 25px;
+      }
+
+      100% {
+        background-color: #edb33f;
+        top: 0px;
+      }
+    }
+
+
+    // 400 times each has a different delay time:
+
+    .block:nth-child([child number]) {
+      animation: cssComplexAnimate 500ms [delay] infinite;
+      /* IE 10+ */
+      -webkit-animation: cssComplexAnimate 500ms [delay] infinite;
+      /* Safari 4+ */
+      -moz-animation: cssComplexAnimate 500ms [delay] infinite;
+      /* Fx 5+ */
+      -o-animation: cssComplexAnimate 500ms [delay] infinite;
+      /* Opera 12+ */
+    }
+
+    ..........
+
+    </pre></code>
+	</div>
+
+	<div class="code-wrapper css fader-el el-2">
+	<h3>
+		css -transform<span class="sub">compiled using SASS and prepos</span>
+	</h3>
+	<code><pre>
+@-webkit-keyframes cssComplexAnimateTransform {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 25px, 0px);
+    -moz-transform: translate3d(0px, 25px, 0px);
+    -ms-transform: translate3d(0px, 25px, 0px);
+    -o-transform: translate3d(0px, 25px, 0px);
+    transform: translate3d(0px, 25px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-moz-keyframes cssComplexAnimateTransform {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 25px, 0px);
+    -moz-transform: translate3d(0px, 25px, 0px);
+    -ms-transform: translate3d(0px, 25px, 0px);
+    -o-transform: translate3d(0px, 25px, 0px);
+    transform: translate3d(0px, 25px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@-o-keyframes cssComplexAnimateTransform {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 25px, 0px);
+    -moz-transform: translate3d(0px, 25px, 0px);
+    -ms-transform: translate3d(0px, 25px, 0px);
+    -o-transform: translate3d(0px, 25px, 0px);
+    transform: translate3d(0px, 25px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes cssComplexAnimateTransform {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0px, 25px, 0px);
+    -moz-transform: translate3d(0px, 25px, 0px);
+    -ms-transform: translate3d(0px, 25px, 0px);
+    -o-transform: translate3d(0px, 25px, 0px);
+    transform: translate3d(0px, 25px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+// 400 times each has a different delay time:
+
+.block:nth-child([child number]) {
+  animation: cssComplexAnimateTransform 500ms [delay] infinite;
+  /* IE 10+ */
+  -webkit-animation: cssComplexAnimateTransform 500ms [delay] infinite;
+  /* Safari 4+ */
+  -moz-animation: cssComplexAnimateTransform 500ms [delay] infinite;
+  /* Fx 5+ */
+  -o-animation: cssComplexAnimateTransform 500ms [delay] infinite;
+  /* Opera 12+ */
+}
+
+..........
+
+	</pre></code>
+	</div>
+
+	
+	<div class="code-wrapper css fader-el el-3">
+	<h3>
+		jQuery<span class="sub"></span>
+	</h3>
+	<code><pre>
+$(".block").each(function(t,el){
+    setTimeout(function(){
+        jqueryAnimate(el);
+    }, (25 * t) );
+});
+
+jqueryAnimate : function(el) {
+    var tp = 20,
+        totalTime = 500,
+        self = this;
+
+    $(el).animate({
+        top : tp,
+        opacity : .5
+    },{
+        duration : totalTime/2,
+        complete: function() {
+            // go back:
+            $(el).animate({
+                top : 0,
+                opacity : 1
+            },{
+                duration : totalTime/2,
+                complete : function(){
+                    self.jqueryAnimate(el);
+                }
+            });
+        }
+    });
+}
+
+	</pre></code>
+	</div>
+
+	<div class="code-wrapper css fader-el el-4">
+	<h3>
+		tweenlite<span class="sub"></span>
+	</h3>
+	<code><pre>
+$(".block").each(function(t,el){
+    setTimeout(function(){
+        var tl = new TimelineMax({repeat:-1, yoyo:true});
+        tl.to(el, .25, {
+                opacity:0.5, 
+                top:20, 
+                ease:Linear.easeNone});    
+    }, (25*t) );
+    
+});
+	</pre></code>
+	</div>
+
+
+	</div>
+	</div>
+</div>

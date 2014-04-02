@@ -57,75 +57,88 @@ define([], function() {
           numstates : 7,
           header :  "Simple Comparison"
           //blurb : ""
-        },
-        _Style : "slideComparedBasic.css"
+        }
+        //_Style : "slideComparedBasic.css"
       },{
         path:'/slide/4',
         name: 'Code comparison',
         status: '',
         description: 'looking at the code snippets from the previous slide.',
         _Controller: 'views/slideComparedBasic',
-        _Template: 'slideComparedBasicCode.html',
-        _Model: "models/Model.comparedBasic",
-        _Style : "slideComparedBasic.css"
+        _Template: 'slideCodeSnippets.html',
+        _Model: "models/Model.comparedBasic"
+        //_Style : "slideComparedBasic.css"
       },{
         path:'/slide/5',
-        name: 'Complex Animation CSS',
+        name: '400 object animation CSS',
         status: '',
         description: 'Multiple objects animating at once. Using CSS Top:',
         _Controller: 'views/slideComparedComplex',
         _Template: 'slideComparedComplex.html',
-        _Style : 'slideComparedComplex.css',
+        //_Style : 'slideComparedComplex.css',
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "Complex Animation<br/> CSS",
+          header :  "400 object Animation<br/>in CSS",
+          blurb : "top and color properties with keyframes and delay.",
           type : "css"
         }
       },{
         path:'/slide/6',
-        name: 'Complex Animation CSS transform',
+        name: '400 object Animation CSS transform',
         status: '',
         description: 'Multiple objects animating at once. Using CSS transfrom to change the y/top position',
         _Controller: 'views/slideComparedComplex',
         _Template: 'slideComparedComplex.html',
-        _Style : 'slideComparedComplex.css',
+        //_Style : 'slideComparedComplex.css',
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "Complex Animation<br/> CSS transform",
+          header :  "400 object Animation<br/>with CSS -transform",
+          blurb : "-transform and opacity with keyframes and delay.",
           type : "css-trans"
         }
       },{
         path:'/slide/7',
-        name: 'Complex Animation jQuery',
+        name: '400 object Animation with jQuery',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with jQuery.',
         _Controller: 'views/slideComparedComplex',
         _Template: 'slideComparedComplex.html',
-        _Style : 'slideComparedComplex.css',
+        //_Style : 'slideComparedComplex.css',
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "Complex Animation<br/> jQuery",
+          header :  "400 object Animation<br/>with jQuery",
+          blurb : "animate top and opacity loop",
           type : "jquery"
         }
       },{
         path:'/slide/8',
-        name: 'Complex Animation TweenLite',
+        name: '400 object Animation with TweenLite',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with TweenLite',
         _Controller: 'views/slideComparedComplex',
         _Template: 'slideComparedComplex.html',
-        _Style : 'slideComparedComplex.css',
+        //_Style : 'slideComparedComplex.css',
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "Complex Animation<br/> TweenLite",
+          header :  "400 object Animation<br/>with TweenLite",
+          blurb : "top and opacity on repeat with yoyo",
           type : "tweenlite"
         }
       },{
         path:'/slide/9',
+        name: 'Complex Code comparison',
+        status: '',
+        description: 'looking at the code snippets from the previous slides.',
+        _Controller: 'views/slide',
+        _Template: 'slideCodeSnippetsComplex.html',
+        _Model: "models/Model.comparedComplex"
+        //_Style : "slideComparedBasic.css"
+      },{
+        path:'/slide/10',
         name: 'Conclusions',
         status: '',
         description: 'Wrap it up.',

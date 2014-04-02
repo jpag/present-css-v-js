@@ -4,21 +4,19 @@
 	$slideW : 90%;
 	$slideH : 90%;
 	$margin: 30%;
-	$padding: 5%;
+	$padding: 10%; // combined padding
 
-	width: $slideW - $padding;
-	height: $slideH - $padding;
-	//min-height: 720px;
-
-	// for mobile:
-	overflow: auto;
-
+	width: $slideW; // - $padding;
+	height: $slideH; // - $padding;
+	
 	left: 50%;
 	top: 50%;
+	
 	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
 
 	position: relative;
-	padding: $padding/2;
+	// padding: $padding/2;
 
 	background: #fefefe;
 	border: 1px solid RGBA(100,100,100,.3);
@@ -26,6 +24,8 @@
 	$shadow : 0 0 40px 0 rgba(50,50,50,.2);
 	-webkit-box-shadow: $shadow;
 	box-shadow: $shadow;
+
+	@include serif();
 
 	@include alpha(100);
 	@include animate-default(all,$s);
@@ -44,38 +44,35 @@
 	}
 
 	.fader-el {
+		height: 0px;
+		overflow: hidden;
 		@include alpha(0);
 		@include animate-default(opacity, $s);
 	}
 
-	&.state-1 {
-		.el-0 {
-			@include alpha(100);
-		}
-	}
-	&.state-2 {
-		.el-0,
-		.el-1 {
-			@include alpha(100);
-		}
-	}
-	&.state-3 {
-		.el-0,
-		.el-1,
-		.el-2 {
-			@include alpha(100);
-		}
-	}
-	&.state-4 {
-		.el-0,
-		.el-1,
-		.el-2,
-		.el-3 {
-			@include alpha(100);
-		}
+
+	.slide-content {
+		overflow: auto;
+		padding: 0 $padding/2;
+		height: 100%;
+		width: 100% - $padding;
 	}
 
 
+	$maxNumOfStates : 10;
+	
+	@for $i from 1 through $maxNumOfStates {
+		&.state-#{$i}{
+			@for $r from 0 through $i - 1 {
+				.fader-el.el-#{$r} {	
+					height: auto;
+					overflow: auto;
+					display: block;
+					@include alpha(100);	
+				}
+			}
+		}
+	}
 	.huge-bar {
 		width: 20px;
 		height: 100%;
@@ -83,12 +80,10 @@
 		background: $magenta;
 		top: 0px;
 		left: 0px;
-		border-right: 1px solid #ddd;
+		border-right: 1px solid RGBA(175,175,175,.1);
 	}
 
 	h1 {
-		// line-height: 100%;
-		// font-size: 6em;
 		font-size: 80px;
 		letter-spacing: -0.01em;
 		color: #000;
@@ -97,6 +92,17 @@
 
 	h2 {
 		font-size: 55px;
+	}
+
+	a {
+		color: #000;
+		&:hover {
+			color: #888;
+		}
+	}
+
+	.bulletpoints {
+		color: #999;
 	}
 
 	.wrapper {
@@ -111,7 +117,9 @@
 		@include sansserif();
 		font-size: 18px;
 
+
 		code {
+			box-sizing: border-box;
 			margin-top: 1%;
 			width: 98%;
 			padding: 2%;
@@ -140,25 +148,24 @@
 		ul {
 			font-size: 16px;
 			color: #999;
+			line-height: 24px;
 			li {
 				padding: 5px;
 			}
 		}
 	}
 
-
 	@media screen and (max-width: $smallBreak) {
 		-webkit-transform: translate(0%, 0%);
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		width: 100% - $padding;
-		height: 100% - $padding;
+		width: 100%;
+		height: 100%;
 		margin: 0px;
 		border: none;
 		box-shadow : none;
 		-webkit-box-shadow: none; 
-		overflow: auto;
 	}	
 }
 

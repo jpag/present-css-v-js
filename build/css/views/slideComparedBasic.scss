@@ -57,7 +57,7 @@
 			-webkit-transform-style: preserve-3d;
 
 			.bar {
-				@include prefix ( transform, translate3d(0px, 0px, 0px) );
+				// @include prefix ( transform, translate3d(0px, 0px, 0px) );
 		 		@include animate-transform($time);
 		 	}
 		}

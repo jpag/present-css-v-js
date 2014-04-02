@@ -47,50 +47,7 @@
 			}
 		}	
 	}
-
-
 }
 
-
-
-		/* .bar-wrapper {
-			$numBars : 4;
-			width: (100% / $numBars) - (2*$margin);
-			position: relative;
-			float: left;
-			margin: $margin;
-			height: $heightAvail;
-		}
-
-		.bar {
-			width: 100%;
-			position: absolute;
-			top: 0px;
-			background: #edb33f;
-			height: $barheight;
-			line-height: $barheight;
-			padding: 5px 0px;
-			text-align: center;
-			// font-size: 3em;
-			text-transform: uppercase;
-			@include sansserif();
-			color: #fff;
-
-		} */
-
-		/* .bar-wrapper.css-height {
-			.bar {
-				@include animate-default(top, $time);
-			}
-		}
-
-		.bar-wrapper.transform {
-			-webkit-transform-style: preserve-3d;
-
-			.bar {
-				@include prefix ( transform, translate3d(0px, 0px, 0px) );
-		 		@include animate-transform($time);
-		 	}
-		} */
 
 	

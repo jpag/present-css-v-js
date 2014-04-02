@@ -48,34 +48,19 @@ define([
             }else if( type == 'css-trans' ){
                 this.$el.addClass("css-trans");
             }else if( type == 'jquery' ){
-                var blocks = $(".block");
                 $(".block").each(function(t,el){
-                    
-                    // if( t > 10 ){
-                    //     return;
-                    // }
-
                     setTimeout(function(){
                         self.jqueryAnimate(el);
                     }, (25 * t) );
-                    
                 });
 
             }else if( type == 'tweenlite' ){
 
-                var blocks = new Array(),
-                    jQBlocks = $(".block");
-
-                // for( var b = 0; b < jQBlocks.length; b++){
-                //     blocks.push(jQBlocks[b]);
-                // }
                 $(".block").each(function(t,el){
                     setTimeout(function(){
                         var tl = new TimelineMax({repeat:-1, yoyo:true});
-                        //staggerTo
                         tl.to(el, .25, {
                                 opacity:0.5, 
-                                // background: ""
                                 top:20, 
                                 ease:Linear.easeNone});    
                     }, (25*t) );

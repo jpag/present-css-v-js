@@ -40,4 +40,12 @@
 
 
 ## TODO:
-	
+
+
+
+# references:
+
+https://github.com/mrdoob/stats.js/
+http://css-tricks.com/myth-busting-css-animations-vs-javascript/
+http://css-tricks.com/using-requestanimationframe/
+http://www.codefessions.com/2012/03/how-fast-is-html5-canvas-part-2.html

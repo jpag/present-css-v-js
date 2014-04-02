@@ -1,18 +1,43 @@
 define([], function() {
   
+  var tab = "&nbsp; ";
+
   var config = {
     id : "slide-compare-basic",
   	numstates : 4,
-    header :  "Code Comparison",
+    header :  "Code",
     code : [
     	{
     		title: "css" ,
     		blurb : "compiled using SASS and prepos",
-    		code : ".baseclass{<br/>top: 0px;<br/>-webkit-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -moz-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -ms-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -o-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>}<br/>.animateto{<br/> top: 400px;<br/>}"
+    		code : ".baseclass{<br/>"+
+                        tab+"top: 0px;<br/>"+
+                        tab+"-webkit-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                        tab+"-moz-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                        tab+"-ms-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                        tab+"-o-transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                        tab+"transition: top 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                        "}<br/>"+
+                        ".animateto{<br/>"+
+                        tab+"top: 400px;<br/>"+
+                        "}"
     	},{
-    		title :"transform" ,
+    		title :"css -transform" ,
     		blurb : "compiled using SASS and prepos",
-    		code : ".baseclass{<br/>-webkit-transform: translate3d(0px, 0px, 0px);<br/> -moz-transform: translate3d(0px, 0px, 0px);<br/> -ms-transform: translate3d(0px, 0px, 0px);<br/> -o-transform: translate3d(0px, 0px, 0px);<br/> transform: translate3d(0px, 0px, 0px);<br/> -webkit-transition: -webkit-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -moz-transition: -mox-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -ms-transition: -ms-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> -o-transition: -o-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/> transition: -transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>}<br/>.animateto{<br/> top: 400px;<br/>}"
+    		code : ".baseclass{<br/>"+
+                    tab+"-webkit-transition: -webkit-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                    tab+"-moz-transition: -mox-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                    tab+"-ms-transition: -ms-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                    tab+"-o-transition: -o-transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                    tab+"transition: -transform 500ms cubic-bezier(0.385, 0.205, 0.235, 0.835);<br/>"+
+                    "}<br/>"+
+                    ".animateto{<br/>"+
+                    tab+"-webkit-transform: translate3d(0px, 400px, 0px);<br/>"+
+                    tab+" -moz-transform: translate3d(0px, 400px, 0px);<br/> "+
+                    tab+"-ms-transform: translate3d(0px, 400px, 0px);<br/>"+
+                    tab+"-o-transform: translate3d(0px, 400px, 0px);<br/> "+
+                    tab+"transform: translate3d(0px, 400px, 0px);<br/>"+
+                    "}"
     	},{
     		title: "jquery",
     		blurb : "96kb",

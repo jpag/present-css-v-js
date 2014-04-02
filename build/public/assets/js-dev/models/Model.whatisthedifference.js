@@ -3,17 +3,17 @@ define([], function() {
   var config = {
     id : "slide-differences",
   	header : "Not all animations are <br/>created equal.",
-    numstates : 3,
+    numstates : 4,
     bulletpts : [
       {
-        title: "CSS",
+        title: "CSS - transitions",
         list : [
-          "'Faster' (specific properties are hardware accelerated) Transforms, and Opacity get the benefit.",
+          "'Faster' (specific properties are hardware accelerated) Transforms, and Opacity properties get the boost.",
           "Requires specific definitions for each browser (Prefixes)",
           "IE 9 doesn't know what these are."
         ],
       },{
-        title: "JS",
+        title: "JS - animations",
         list : [
           "Requires a layer of programming to update each step.",
           "Easier to manage complex animations and interaction points."
@@ -21,7 +21,12 @@ define([], function() {
       },{
         title: "Both",
         list : [
-          "Alter values of an html element's CSS properties (top,bottom,margin... etc.)"
+          "Alter values of an html's CSS properties (top,bottom,margin... etc.)"
+        ],
+      },{
+        title: "Disclaimer",
+        list : [
+          "These aren't perfect tests. They are examples."
         ],
       }
     ]

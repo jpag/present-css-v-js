@@ -1,17 +1,17 @@
-## front end template
+# CSS and JS Animations 
 
-# CSS
+## CSS
 	SASS css compiled with http://alphapixels.com/prepros/ (Free version)
 	There is a dynamic fluid grid (responsive) as well as a static grid available
 	Top and Bottom wrappers are using HTML5 boilerplate
 
-# Javascript
+## Javascript
 	View builder extend. 
 
 	JQuery v1.10 (not 2.0) supports old IE.
 	Handlebars v 1.1.2
 
-# HTML templating:
+## HTML templating:
 
 	- could use underscore interpolate to switch to {{}} handlebars/mustache style templating
     
@@ -22,7 +22,7 @@
 	- or just use handlebars
 
 
-# Build Process
+## Build Process
 	Optimize files using Require.
 
 	First, install the requirejs npm package (if you haven't already):
@@ -32,13 +32,9 @@
 
     bash build.sh
 
-
-
 ## TODO:
 
-
-
-# references:
+## references:
 
 https://github.com/mrdoob/stats.js/
 http://css-tricks.com/myth-busting-css-animations-vs-javascript/

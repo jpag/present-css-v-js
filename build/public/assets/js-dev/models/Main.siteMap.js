@@ -35,6 +35,7 @@ define([], function() {
           numstates : 1,
           header : "Comparing animation techniques in HTML",
           h1 : true,
+          hugebar : true,
           blurb : "A look at CSS and JS animation performance in rapid prototyping or development."
         }
       },{
@@ -47,6 +48,14 @@ define([], function() {
         _Model: "models/Model.whatisthedifference"
       },{
         path:'/slide/3',
+        name: 'What is the code syntax?',
+        status: '',
+        description: 'Show case how to program each other, the properties for each',
+        _Controller: 'views/slide',
+        _Template: 'slideCodeSnippets.html',
+        _Model: "models/Model.codesyntax"
+      },{
+        path:'/slide/4',
         name: 'Basic animation comparison',
         status: '',
         description: 'Compare animation of Top or Transform of a bar.',
@@ -60,7 +69,7 @@ define([], function() {
         }
         //_Style : "slideComparedBasic.css"
       },{
-        path:'/slide/4',
+        path:'/slide/5',
         name: 'Code comparison',
         status: '',
         description: 'looking at the code snippets from the previous slide.',
@@ -69,7 +78,7 @@ define([], function() {
         _Model: "models/Model.comparedBasic"
         //_Style : "slideComparedBasic.css"
       },{
-        path:'/slide/5',
+        path:'/slide/6',
         name: '400 object animation CSS',
         status: '',
         description: 'Multiple objects animating at once. Using CSS Top:',
@@ -84,7 +93,7 @@ define([], function() {
           type : "css"
         }
       },{
-        path:'/slide/6',
+        path:'/slide/7',
         name: '400 object Animation CSS transform',
         status: '',
         description: 'Multiple objects animating at once. Using CSS transfrom to change the y/top position',
@@ -99,7 +108,7 @@ define([], function() {
           type : "css-trans"
         }
       },{
-        path:'/slide/7',
+        path:'/slide/8',
         name: '400 object Animation with jQuery',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with jQuery.',
@@ -114,7 +123,7 @@ define([], function() {
           type : "jquery"
         }
       },{
-        path:'/slide/8',
+        path:'/slide/10',
         name: '400 object Animation with TweenLite',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with TweenLite',
@@ -129,7 +138,7 @@ define([], function() {
           type : "tweenlite"
         }
       },{
-        path:'/slide/9',
+        path:'/slide/11',
         name: 'Complex Code comparison',
         status: '',
         description: 'looking at the code snippets from the previous slides.',
@@ -138,7 +147,7 @@ define([], function() {
         _Model: "models/Model.comparedComplex"
         //_Style : "slideComparedBasic.css"
       },{
-        path:'/slide/10',
+        path:'/slide/12',
         name: 'Conclusions',
         status: '',
         description: 'Wrap it up.',

@@ -1,5 +1,7 @@
 <div id="{{id}}" class="slide right state-1" data-state="1" data-states="{{numstates}}" >
-	<div class="huge-bar"></div>
+	{{#if hugebar}}
+		<div class="huge-bar"></div>
+	{{/if}}
 	<div class="slide-content">
 		{{#if h1}}
 			<h1>{{{header}}}</h1>

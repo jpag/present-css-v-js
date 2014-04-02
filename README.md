@@ -1,8 +1,3 @@
-## references for presentation :
-
-
-
-
 ## front end template
 
 # CSS

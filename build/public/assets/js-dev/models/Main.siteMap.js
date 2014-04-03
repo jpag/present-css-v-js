@@ -15,6 +15,7 @@ define([], function() {
   // if you have a re-occuring subview that doesn't auto intitate in main
   // declare it here and save lines of code
   
+  var numOfBlocksInComplexAnim = 315;
 
   var config = [
   		{
@@ -79,7 +80,7 @@ define([], function() {
         //_Style : "slideComparedBasic.css"
       },{
         path:'/slide/6',
-        name: '400 object animation CSS',
+        name: 'Multi-object Animation with CSS top',
         status: '',
         description: 'Multiple objects animating at once. Using CSS Top:',
         _Controller: 'views/slideComparedComplex',
@@ -88,13 +89,13 @@ define([], function() {
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "400 object Animation<br/>in CSS",
+          header :  numOfBlocksInComplexAnim + " object Animation<br/>in CSS",
           blurb : "top and color properties with keyframes and delay.",
           type : "css"
         }
       },{
         path:'/slide/7',
-        name: '400 object Animation CSS transform',
+        name: 'Multi-object Animation CSS transform',
         status: '',
         description: 'Multiple objects animating at once. Using CSS transfrom to change the y/top position',
         _Controller: 'views/slideComparedComplex',
@@ -103,13 +104,13 @@ define([], function() {
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "400 object Animation<br/>with CSS -transform",
+          header :  numOfBlocksInComplexAnim + " object Animation<br/>with CSS -transform",
           blurb : "-transform and opacity with keyframes and delay.",
           type : "css-trans"
         }
       },{
         path:'/slide/8',
-        name: '400 object Animation with jQuery',
+        name: 'Multi-object Animation with jQuery',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with jQuery.',
         _Controller: 'views/slideComparedComplex',
@@ -118,13 +119,13 @@ define([], function() {
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "400 object Animation<br/>with jQuery",
+          header :  numOfBlocksInComplexAnim + " object Animation<br/>with jQuery",
           blurb : "animate top and opacity loop",
           type : "jquery"
         }
       },{
-        path:'/slide/10',
-        name: '400 object Animation with TweenLite',
+        path:'/slide/9',
+        name: 'Multi-object Animation with TweenLite',
         status: '',
         description: 'Multiple objects animating at once. Using top animating with TweenLite',
         _Controller: 'views/slideComparedComplex',
@@ -133,9 +134,24 @@ define([], function() {
         _Model: {
           id : "slide-compared-complex",
           numstates : 1,
-          header :  "400 object Animation<br/>with TweenLite",
+          header :  numOfBlocksInComplexAnim + " object Animation<br/>with TweenLite",
           blurb : "top and opacity on repeat with yoyo",
           type : "tweenlite"
+        }
+      },{
+        path:'/slide/10',
+        name: 'Multi-object Animation with Canvas',
+        status: '',
+        description: 'Multiple objects animating at once using requestAnimationFrame',
+        _Controller: 'views/slideComparedComplex',
+        _Template: 'slideComparedCanvas.html',
+        //_Style : 'slideComparedComplex.css',
+        _Model: {
+          id : "slide-compared-complex",
+          numstates : 1,
+          header :  numOfBlocksInComplexAnim + " object Animation<br/>with Canvas",
+          blurb : "requestAnimationFrame",
+          type : "canvas"
         }
       },{
         path:'/slide/11',

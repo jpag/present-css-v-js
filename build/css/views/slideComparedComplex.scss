@@ -4,29 +4,31 @@
 			
 	$time : 500ms;
 	$barheight : 50px;
-	$heightAvail : 450px;
+
+	$widthAvail: 700px;
+	$heightAvail : 470px;
 	
 	.wrapper {
 		$padding: 1%;
 		$margin: 1%;
 		$wrapperWidth : 100%;
 
-		height: $heightAvail + 20px;
-		width: 700px; //$wrapperWidth - ((2*$padding) + (2* $margin) );
+		height: $heightAvail;
+		width: $widthAvail;
 		padding: $padding;
 		margin: auto;
 		margin-top: 10%;
 		position: relative;
 
 		.block {
-			$blockWH : 5px;
-			width: 27px; //$blockWH;
-			height: 23px; //$blockWH;
+			$blockMargin : 5px;
+			width: 27px; 
+			height: 23px;
 			border-radius: 3px;
 			-webkit-border-radius: 3px;
 			position: relative;
 			float: left;
-			margin: $blockWH / 2;
+			margin: $blockMargin / 2;
 			background: $demoColor;
 
 		}
@@ -46,6 +48,11 @@
 				@include animateDelay(cssComplexAnimateTransform, $i * 25ms);
 			}
 		}	
+	}
+
+	canvas {
+		// width: $widthAvail;
+		// height: $heightAvail;
 	}
 }
 

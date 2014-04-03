@@ -6,6 +6,7 @@ define([], function() {
     id : "slide-compare-basic",
   	numstates : 4,
     header :  "Code",
+    hugebar: true,
     code : [
     	{
     		title: "css" ,

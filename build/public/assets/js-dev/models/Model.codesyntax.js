@@ -5,6 +5,7 @@ define([], function() {
   var config = {
     id : "slide-syntax",
   	numstates : 4,
+    hugebar : true,
     header :  "Code Syntax",
     code : [
         {
@@ -16,7 +17,14 @@ define([], function() {
         },{
             title: "css animation" ,
             blurb : "",
-            code : "[browser prefix]-animation: [animation name] [time] [delay] [delay] <br/>"
+            code : "@[browser prefix]keyframes animation-name {<br/>"+
+                    tab+"from {<br/>"+
+                    tab+tab+"<br/>"+
+                    tab+"}<br/>"+
+                    tab+"to {<br/>"+
+                    tab+tab+"<br/>"+
+                    tab+"}<br/>"+
+                "[browser prefix]-animation: [animation name] [time] [delay] [iterations] [direction] [fill-mode]<br/>"
 
         },{
             title: 'javascript jQuery',

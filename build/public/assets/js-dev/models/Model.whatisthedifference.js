@@ -4,6 +4,7 @@ define([], function() {
     id : "slide-differences",
   	header : "Not all animations are <br/>created equal.",
     numstates : 4,
+    hugebar : true,
     bulletpts : [
       {
         title: "CSS - transitions",

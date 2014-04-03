@@ -4,7 +4,7 @@ define([], function() {
 
   var config = {
     id : "slide-compare-basic",
-  	numstates : 5,
+  	numstates : 6,
     header :  "Code"
     // too much work to format the code into the model
     // and I really want to avoid adding another library like jsbeautifier

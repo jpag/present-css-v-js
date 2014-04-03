@@ -36,7 +36,9 @@
 
 ## references:
 
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations
 https://github.com/mrdoob/stats.js/
 http://css-tricks.com/myth-busting-css-animations-vs-javascript/
 http://css-tricks.com/using-requestanimationframe/
 http://www.codefessions.com/2012/03/how-fast-is-html5-canvas-part-2.html
+http://css-tricks.com/snippets/css/keyframe-animation-syntax/

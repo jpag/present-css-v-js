@@ -5,6 +5,7 @@ define([], function() {
     id : "slide-conclusion",
   	header : "Conclusions",
     numstates : 6,
+    hugebar : true,
     bulletpts : [
       "",
       

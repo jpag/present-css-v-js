@@ -90,7 +90,6 @@ require([
             }
             view = siteMap.directory[ siteMap.defaultPage ];
         }
-
         App.loadView( view, App.loadComplete );
     };
 
@@ -108,6 +107,7 @@ require([
                     if( typeof callBack !== 'undefined' ){
                         callBack();
                     }
+                    window.GA.TrackPage('cssvjs/'+vw.path);
                 });
     };  
 
@@ -117,6 +117,7 @@ require([
     */
     App.loadComplete = function() {
         $("#site-composite").show();
+
     };
 
 

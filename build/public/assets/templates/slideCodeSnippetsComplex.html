@@ -40,7 +40,7 @@
     @include cssComplexAni;
   }
 
-  $numberOfBlocks : 400;
+  $numberOfBlocks : 315;
   .css-animate {
     @for $i from 1 through $numberOfBlocks {
       .wrapper .block:nth-child(#{$i}){
@@ -126,7 +126,7 @@
     }
 
 
-    // 400 times each has a different delay time:
+    // 315 times each has a different delay time:
 
     .block:nth-child([child number]) {
       animation: cssComplexAnimate 500ms [delay] infinite;
@@ -265,7 +265,7 @@
   }
 }
 
-// 400 times each has a different delay time:
+// 315 times each has a different delay time:
 
 .block:nth-child([child number]) {
   animation: cssComplexAnimateTransform 500ms [delay] infinite;

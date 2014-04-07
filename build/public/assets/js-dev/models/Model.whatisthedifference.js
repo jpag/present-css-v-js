@@ -27,7 +27,8 @@ define([], function() {
       },{
         title: "Disclaimer",
         list : [
-          "These aren't perfect tests. They are examples."
+          "These aren't perfect tests. They are examples.",
+          "There might be more efficent means of demonstrating the same animations."
         ],
       }
     ]

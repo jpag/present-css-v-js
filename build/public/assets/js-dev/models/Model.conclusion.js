@@ -9,8 +9,8 @@ define([], function() {
     bulletpts : [
       "",
       
-      // maybe remove this one:
       //"Hardware performance isn't something to rely on exclusively (use in moderation)",
+      //"Transform 'hacks' can cause awkward repainting artifacts (in Chrome especially.).",
 
       "CSS transitions can get complicated and hard to manage <br/>"+
         tab+"-mulitple prefixes<br/>"+
@@ -24,11 +24,9 @@ define([], function() {
       tab+"-deactivates when tab is not active",
       
       // "Always have a fallback for legacy products.",
-      
       // "There are alternatives to jQuery (84kb). <a href='http://zeptojs.com/'>Zepto<a/> 10kbs or <a href='https://github.com/dettmar/johanQuery'>subset jQuery</a> 911bytes",
       
       "Source: <a href='github.com/jpag/present-css-v-js'>github.com/jpag/present-css-v-js</a>",
-      
       "thanks."
     ]
 
